@@ -1,7 +1,0 @@
-=== Confluent Cloud API key: lsrc-wz1r25 ===
-
-API key:
-AVL2PGWZQK3DJCZ7
-
-API secret:
-33s2FrmDOkUgBr95vJ3QHwD8E+wNCJqYgZMehxZQ8z9OmITt/59IUJlcZmDpIgZy
