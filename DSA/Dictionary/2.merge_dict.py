@@ -1,11 +1,11 @@
-def merge_dictionary(dict1:dict[str,int], dict2:dict[str,int])->dict:
+def merge_dictionary(dict1: dict[str, int], dict2: dict[str, int]) -> dict:
     merged_dict = dict2.copy()
-    for key,value in dict1.items():
-            if key in merged_dict:
-                merged_dict[key]+= value
-            else:
-                 merged_dict[key]= value    
-    
+    for key, value in dict1.items():
+        if key in merged_dict:
+            merged_dict[key] += value
+        else:
+            merged_dict[key] = value
+
     return merged_dict
 
 
