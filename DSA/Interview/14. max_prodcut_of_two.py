@@ -1,5 +1,8 @@
 def max_product_of_two(arr:list[int]):
 
+    if not arr:
+        return -1
+
     # assign max numbers with smallest value 
     max_1 = max_2 = float('-inf')
 
