@@ -1,5 +1,5 @@
 def product_except_self(nums):
-    # The length of the input array
+
     length = len(nums)
 
     # The answer array to hold the products
@@ -22,9 +22,23 @@ def product_except_self(nums):
         answer[i] = answer[i] * R
         R *= nums[i]
 
-    return answer
+    return answer  # time complexity : O(n) and Space : O(n)
 
+def product_except_self_brute(nums):
+
+    answer = []
+
+    for i in range(len(nums)):
+        product = 1
+        for j in range(len(nums)):
+            if i!=j:
+                product = product * nums[j]
+        
+        answer.append(product)
+
+    return answer
 
 # Example usage:
 example_array = [1, 2, 3, 4]
-product_except_self(example_array)
+#print(product_except_self(example_array))
+print(product_except_self_brute(example_array))
