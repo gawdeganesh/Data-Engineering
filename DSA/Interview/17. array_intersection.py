@@ -1,1 +1,2 @@
-def array_intersection(list)
+def array_intersection(list):
+    pass
