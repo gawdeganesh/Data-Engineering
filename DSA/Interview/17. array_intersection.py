@@ -1,0 +1,1 @@
+def array_intersection(list)

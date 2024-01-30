@@ -1,5 +1,5 @@
 def two_sum(arr: list, sum: int) -> list:
-    seen_pairs = set()
+    seen_pairs = set()  # not needed
     seen_pairs_data = []  # to store the array data
     unique_pairs = []
 
