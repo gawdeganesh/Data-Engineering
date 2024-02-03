@@ -10,10 +10,10 @@ def reverse_string(word)->str:
     return reverse_string
 
 
-print(f"reverse string  of abcd is  {reverse_string('abcd')} ")
-print(f"reverse string  of aaaa is  {reverse_string('aaaa')} ")
-print(f"reverse string  of '' is  {reverse_string(' ')} ")
-print(f"reverse string  of 12345 is  {reverse_string('12345')} ")
+print(f"reverse string of abcd is  {reverse_string('abcd')} ")
+print(f"reverse string of aaaa is  {reverse_string('aaaa')} ")
+print(f"reverse string of '' is  {reverse_string(' ')} ")
+print(f"reverse string of 12345 is  {reverse_string('12345')} ")
 
 
 # other ways 
