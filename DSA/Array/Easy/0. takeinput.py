@@ -1,5 +1,5 @@
-list1 = [item for item in input('Enter the value: \n').split()]
-list2=[int(item) for item in input('Enter the value: \n').split()]
+list1 = [item for item in input("Enter the value: \n").split()]
+list2 = [int(item) for item in input("Enter the value: \n").split()]
 
 print(list1)
 print(list2)
@@ -14,9 +14,7 @@ numbers_as_strings = user_input.split()
 numbers = [int(number) for number in numbers_as_strings]
 
 # Create a list comprehension to create a list of the square of each number
-squared_numbers = [number ** 2 for number in numbers]
+squared_numbers = [number**2 for number in numbers]
 
 # Print the list of squared numbers
 print(squared_numbers)
-
-
