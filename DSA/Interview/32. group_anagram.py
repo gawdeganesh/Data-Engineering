@@ -3,15 +3,15 @@ def group_anagrams(strs):
     for s in strs:
         # Sort the string and use it as a key
 
-        # key = tuple(sorted(s)) 
-        key = ''.join(sorted(s)) 
+        # key = tuple(sorted(s))
+        key = "".join(sorted(s))  # key must be immutable hence tuple or string
         if key not in anagrams:
-            anagrams[key] = [s]
+            anagrams[key] = [s]  # as a list hence [s] and not s
         else:
-            anagrams[key].append(s) #values are list  {'aet': ['eat', 'tea'], 'ant': ['tan']}
-    
+            anagrams[key].append(s)  # values are list  {'aet': ['eat', 'tea'], 'ant': ['tan']}
 
     return list(anagrams.values())
+
 
 # Example usage
 strs = ["eat", "tea", "tan", "ate", "nat", "bat", "abc", "123"]
@@ -28,4 +28,3 @@ print(group_anagrams(strs))
     print(anagrams_group)
     
 """
-

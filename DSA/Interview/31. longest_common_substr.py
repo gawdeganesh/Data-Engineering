@@ -1,8 +1,6 @@
-def longest_common_substring(str1, str2):
+def longest_common_substring(str1, str2): ## brute force approach
     # Generate all possible substrings of str1
-    substrings_str1 = {
-        str1[i:j] for i in range(len(str1)) for j in range(i + 1, len(str1) + 1)
-    }
+    substrings_str1 = {str1[i:j] for i in range(len(str1)) for j in range(i + 1, len(str1) + 1) }
 
     print(substrings_str1)
 

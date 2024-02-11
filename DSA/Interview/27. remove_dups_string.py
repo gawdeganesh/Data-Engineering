@@ -3,13 +3,12 @@ def remove_duplicates(input_string: str) -> str:
     if not input_string:
         return "-1"
 
-    seen = set()
     unique_str = ""
 
     for char in input_string:
-        if char not in seen:
-            seen.add(char)
+        if char not in unique_str:
             unique_str += char
+
     return unique_str
 
 

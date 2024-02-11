@@ -1,5 +1,7 @@
 def sort_students_by_scores(students_scores):
     # Sort the dictionary by its values in descending order
+    # students_scores.items() return tuples with (key,value) and parameter key is used to determine on what value the sorting is performed
+
     sorted_tuples = sorted(
         students_scores.items(), key=lambda item: item[1], reverse=True
     )
