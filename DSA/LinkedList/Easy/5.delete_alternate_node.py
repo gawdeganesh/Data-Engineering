@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -28,12 +29,13 @@ class LinkedList:
             current = current.next
 
     def display(self):
-       curr = self.head
-       result = ''
-       while curr!= None:
-            result = result + str(curr.data) + '->'
-            curr = curr.next 
-       return  print(result[:-2])  
+        curr = self.head
+        result = ""
+        while curr != None:
+            result = result + str(curr.data) + "->"
+            curr = curr.next
+        return print(result[:-2])
+
 
 # Example usage:
 llist = LinkedList()
@@ -42,7 +44,7 @@ llist.append(2)
 llist.append(3)
 llist.append(4)
 llist.append(5)
-llist.append()
+llist.append(234)
 
 print("Original Linked List:")
 llist.display()
