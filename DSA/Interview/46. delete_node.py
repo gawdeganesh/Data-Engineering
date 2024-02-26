@@ -40,19 +40,18 @@ def delete_node(head, index):
 
     if index == 0:
         head = current.next
-        return
+        return head
 
     while current:
-        if index == count:
-            break
+        if count == index - 1:  # Find the node just before the index
+            if current.next:
+                current.next = current.next.next  # Bypass the node at index
+            break  # Node found and deleted; exit the loop
         else:
             current = current.next
             count += 1
 
-    if not current:
-        return "index not found"
-    else:
-        current.next = None
+    return head
 
 
 values = [25, 453, 12, -1, 34]
@@ -63,10 +62,9 @@ list_head = createLinkedList(values)
 printLinkedList(list_head)
 
 # delete the node at index
+new_head = delete_node(list_head, 0)
+printLinkedList(new_head)
 
-delete_node(list_head, 0)
-printLinkedList(list_head)
 
-
-# delete_node(list_head, 4)
-# printLinkedList(list_head)
+new_head = delete_node(list_head, 4)
+printLinkedList(new_head)
