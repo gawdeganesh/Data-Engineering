@@ -26,21 +26,35 @@ def detect_cycle_start(head):
 
 
 # Helper function to create a linked list and introduce a loop for testing
-def create_linked_list_with_loop(values, loop_start_index):
+def create_linked_list_with_loop(values, loop_start_index=None):
+    """
+    Creates a linked list from the given list of values.
+    If loop_start_index is provided and valid, introduces a loop at the specified index.
+
+    :param values: List of values to create nodes.
+    :param loop_start_index: Index at which the loop should start. If None, no loop is created.
+    :return: The head of the newly created linked list.
+    """
     head = None
     tail = None
     loop_start_node = None
+
     for index, value in enumerate(values):
         new_node = Node(value)
-        if index == 0:
+        if head is None:
             head = new_node
+            tail = new_node
         else:
             tail.next = new_node
+            tail = new_node
+
         if index == loop_start_index:
             loop_start_node = new_node
-        tail = new_node
-    if tail and loop_start_node:
-        tail.next = loop_start_node  # Create a loop
+
+    # If a valid loop_start_index was provided, point the last node's next to the loop start node
+    if loop_start_node:
+        tail.next = loop_start_node
+
     return head
 
 

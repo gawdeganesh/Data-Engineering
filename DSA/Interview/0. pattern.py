@@ -11,6 +11,7 @@
 1 2 3 4 5
 """
 
+
 def pattern1(n: int) -> None:
     for _ in range(1, n + 1):
         for j in range(1, 6):
@@ -42,6 +43,11 @@ def pattern2(n: int) -> None:
 1 2 3 4 5
 
 starting element is changing so j shouldnt start with constant numbers like 1,n
+
+increasing traingle 
+
+    for i in range(1, n+1):
+        for j in range(1, i + 1):
 """
 
 
@@ -49,6 +55,16 @@ def pattern3(n: int):
     for i in range(n, 0, -1):
         for j in range(i, n + 1):
             print(j, end=" ")
+        print()
+
+
+# 1st row is changing use i in the printing the pattern (combination of i and j)
+
+
+def pattern3(n: int) -> None:
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print((n - (i - j)), end=" ")
         print()
 
 
@@ -67,12 +83,25 @@ def pattern4(n: int) -> None:
             print(j, end=" ")
         print()
 
+
+def pattern4(n: int) -> None:
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            print((n + 1 - j), end=" ")
+        print()
+
+
 """
 1 2 3 4 5
 1 2 3 4
 1 2 3
 1 2
 1
+
+decreasing traingle 
+
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
 """
 
 
@@ -98,12 +127,15 @@ def pattern6(n: int) -> None:
             print(j, end=" ")
         print()
 
+
 """
 5 4 3 2 1
 4 3 2 1
 3 2 1
 2 1
 1
+
+
 """
 
 
@@ -113,6 +145,17 @@ def pattern7(n: int) -> None:
             print(j, end=" ")
         print()
 
+
+# 1st row is changing use i in the printing the pattern (combination of i and j)
+
+
+def pattern7(n: int) -> None:
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            print(i - j + 1, end=" ")
+        print()
+
+
 """
 1 2 3 4 5
 2 3 4 5
@@ -121,11 +164,20 @@ def pattern7(n: int) -> None:
 5
 """
 
+
 def pattern8(n: int) -> None:
-    for i in range(1, n+1):
-        for j in range(i, n+1):
+    for i in range(1, n + 1):
+        for j in range(i, n + 1):
             print(j, end=" ")
         print()
+
+
+def pattern8(n: int) -> None:
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            print(n - i + j, end=" ")
+        print()
+
 
 """
 1
@@ -144,6 +196,7 @@ def pattern9(n: int) -> None:
             count += 1
         print()
 
+
 """
 1 2 1 2 1
 1 2 1 2
@@ -152,15 +205,25 @@ def pattern9(n: int) -> None:
 1
 """
 
+
 def pattern10(n: int) -> None:
-    for i in range(1,n+1):
-        for j in range(n, i-1,-1):
-            if j%2==0:
-                print('2', end=" ")
+    for i in range(1, n + 1):
+        for j in range(n, i - 1, -1):
+            if j % 2 == 0:
+                print("2", end=" ")
             else:
-                print('1', end=" ")
+                print("1", end=" ")
         print()
 
+
+def pattern10(n: int) -> None:
+    for i in range(n, 0, -1):
+        for j in range(1, i + 1):
+            if j % 2 == 0:
+                print("2", end=" ")
+            else:
+                print("1", end=" ")
+        print()
 
 
 """ 
@@ -170,14 +233,16 @@ https://online.codeanddebug.in/wp-content/uploads/2024/01/Week-3-Assignment-2.pd
 
 """
 
+
 def pattern11(n: int) -> None:
-    for i in range(1,n+1):
-        for j in range(1, (n-i)+1):
-            print(' ', end=" ")
-        for k in range(i, 0,-1):
-            print(k, end=" ")       
+    for i in range(1, n + 1):
+        for j in range(1, (n - i) + 1):
+            print(" ", end=" ")
+        for k in range(i, 0, -1):
+            print(k, end=" ")
 
         print()
+
 
 def pattern12(n: int) -> None:
     for i in range(n, 0, -1):
@@ -188,6 +253,7 @@ def pattern12(n: int) -> None:
 
         print()
 
+
 def pattern13(n: int) -> None:
     for i in range(1, n + 1):
         for j in range(n - i):
@@ -195,6 +261,7 @@ def pattern13(n: int) -> None:
         for k in range(2 * i - 1):
             print(i, end=" ")
         print()
+
 
 def pattern14(n: int) -> None:
     for i in range(1, n // 2 + 2):
@@ -211,21 +278,22 @@ def pattern14(n: int) -> None:
             print(i, end=" ")
         print()
 
+
 def pattern15(n: int) -> None:
     for i in range(1, n // 2 + 2):
-        for j in range(1,i+1):
+        for j in range(1, i + 1):
             print(j, end=" ")
         print()
 
     for i in range(n // 2, 0, -1):
-        for j in range(1,i+1):
+        for j in range(1, i + 1):
             print(j, end=" ")
         print()
 
 
 def pattern16(n: int) -> None:
-    for i in range(n // 2 + 1, 0,-1):
-        for j in range(i,n//2+2):
+    for i in range(n // 2 + 1, 0, -1):
+        for j in range(i, n // 2 + 2):
             print(j, end=" ")
         print()
 
@@ -234,6 +302,7 @@ def pattern16(n: int) -> None:
             print(j, end=" ")
         print()
 
+
 def pattern17(n: int) -> None:
     for i in range(1, n // 2 + 2):
         for j in range(n // 2 - i + 1):
@@ -241,7 +310,7 @@ def pattern17(n: int) -> None:
         for k in range(1, 2 * i):
             print(k, end=" ")
         print()
-        
+
     for i in range(n // 2, -1, -1):
         for j in range(n // 2 - i + 1):
             print(" ", end=" ")
