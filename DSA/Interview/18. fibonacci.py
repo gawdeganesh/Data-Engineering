@@ -2,8 +2,8 @@ def fibonacci(num: int):
     # initialize first two numbers
     series = [0, 1]
 
-    if num <= 1:
-        return series[: num + 1]
+    if num <= 2:
+        return series[:num]
     else:
         while len(series) < num:
             sum_of_last_two_elements = series[-1] + series[-2]
@@ -12,4 +12,5 @@ def fibonacci(num: int):
     return series
 
 
-print(fibonacci(10))
+# print(fibonacci(10))
+print(fibonacci(2))

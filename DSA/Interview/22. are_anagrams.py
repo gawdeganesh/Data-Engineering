@@ -15,11 +15,13 @@ def are_anagrams(str1: str, str2: str) -> str:
         if char in anagram_check:
             anagram_check[char] -= 1
 
+    # remember : the keys are still present and only the values are 0
+
     for value in anagram_check.values():
         if value != 0:
             return print("strings are not anagram")
 
-    print("strings are anagram")
+    return print("strings are anagram")
 
 
 are_anagrams("abbc", "bbac")
