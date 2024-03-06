@@ -7,13 +7,14 @@
 
 """
 
+
 def add_binary(a, b):
     result = ""  # The result of binary addition
     carry = 0  # The carry bit
-    
+
     # Start from the last characters of both strings
     i, j = len(a) - 1, len(b) - 1
-    
+
     while i >= 0 or j >= 0 or carry:
         sum = carry
         if i >= 0:
@@ -22,11 +23,12 @@ def add_binary(a, b):
         if j >= 0:
             sum += int(b[j])
             j -= 1
-            
+
         carry = sum // 2  # Update carry
         result = str(sum % 2) + result  # Prepend the remainder to the result
-    
+
     return result
+
 
 # Example usage
 a = "1010"
@@ -38,14 +40,17 @@ print(add_binary(a, b))  # Output: "10101"
 2.Add the two integers.
 3.Convert the sum back to a binary string using the bin() function and remove the '0b' prefix that Python uses to indicate a binary number.
 """
+
+
 def add_binary(a, b):
     # Step 1: Convert binary strings to integers
     sum_decimal = int(a, 2) + int(b, 2)
-    
+
     # Step 2 & 3: Convert the sum back to binary and remove the '0b' prefix
-    sum_binary = bin(sum_decimal)[2:]
-    
+    sum_binary = bin(sum_decimal)[2:]  # 0b10101
+
     return sum_binary
+
 
 # Example usage
 a = "1010"
