@@ -63,6 +63,8 @@ values = [3, 2, 0, -4]
 loop_start_index = 1  # Assuming the loop starts at index 1
 list_head = create_linked_list_with_loop(values, loop_start_index)
 loop_start_node = detect_cycle_start(list_head)
+
+
 if loop_start_node:
     print(f"Loop starts at node with value: {loop_start_node.value}")
 else:

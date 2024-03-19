@@ -37,7 +37,7 @@ def merge_linked_list(list1, list2):
 
     # create a dummy head to store a sorted list
 
-    dummy_node = Node(0)
+    dummy_node = Node(0)  # head element is 0 for merged list
     tail = dummy_node
 
     while list1 and list2:
