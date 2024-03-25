@@ -81,11 +81,10 @@ result = union_of_arrays(array1, array2)
 print("Union of the two arrays:", result)
 
 
-
-def unionSortedArrays(a, b) :
+def unionSortedArrays(a, b):
     i, j = 0, 0
     union_array = []
-    
+
     # Process both arrays until one is fully traversed.
     while i < len(a) and j < len(b):
         # Skip duplicates in array 'a'.
@@ -125,6 +124,7 @@ def unionSortedArrays(a, b) :
 
     return union_array
 
+
 """
 Time complexity -> O(n+m)
 n is number of elements in a
@@ -134,7 +134,7 @@ Space complexity -> O(1)
 """
 
 
-def sortedArray(a: [int], b: [int]) -> [int]:
+def sortedArray(a, b):
     i = 0
     j = 0
     result = []
@@ -159,4 +159,3 @@ def sortedArray(a: [int], b: [int]) -> [int]:
         j += 1
 
     return result
-
