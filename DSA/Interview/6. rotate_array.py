@@ -69,6 +69,30 @@ def rotate_array_left(arr: list, k: int) -> list:
     return arr  # time complexity : O[n] and space complexity : O[1] because of in-place update
 
 
+from typing import List
+
+"""
+Time complexity = O(r*n), where r is number of rotations
+and n is number of elements in the array
+
+Space complexity = O(1)
+"""
+
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        # Becuase if k = 8 and length = 7, means
+        # we should only rotate 1 time instead of 8 times
+        rotations = k % len(nums)
+
+        for _ in range(rotations):
+            last = nums.pop()
+            nums.insert(0, last)
+
+
 print(rotate_array_left([1, 2, 34, 5, 6, -9, 88888], 3))  # [5, 6, -9, 88888, 1, 2, 34]
 # print(rotate_array_left([], 1))
 print(rotate_array_left([-1, -2, -34, -5, -6, -9, -88888], 10))

@@ -79,3 +79,84 @@ array1 = [1, 2, 3, 4]
 array2 = [3, 4, 5, 6]
 result = union_of_arrays(array1, array2)
 print("Union of the two arrays:", result)
+
+
+
+def unionSortedArrays(a, b) :
+    i, j = 0, 0
+    union_array = []
+    
+    # Process both arrays until one is fully traversed.
+    while i < len(a) and j < len(b):
+        # Skip duplicates in array 'a'.
+        while i + 1 < len(a) and a[i] == a[i + 1]:
+            i += 1
+        # Skip duplicates in array 'b'.
+        while j + 1 < len(b) and b[j] == b[j + 1]:
+            j += 1
+
+        # Add smaller element or equal elements from both arrays.
+        if a[i] < b[j]:
+            union_array.append(a[i])
+            i += 1
+        elif a[i] > b[j]:
+            union_array.append(b[j])
+            j += 1
+        else:
+            union_array.append(a[i])
+            i += 1
+            j += 1
+
+    # Process any remaining elements in 'a'.
+    while i < len(a):
+        # Skip duplicates in the remainder of 'a'.
+        while i + 1 < len(a) and a[i] == a[i + 1]:
+            i += 1
+        union_array.append(a[i])
+        i += 1
+
+    # Process any remaining elements in 'b'.
+    while j < len(b):
+        # Skip duplicates in the remainder of 'b'.
+        while j + 1 < len(b) and b[j] == b[j + 1]:
+            j += 1
+        union_array.append(b[j])
+        j += 1
+
+    return union_array
+
+"""
+Time complexity -> O(n+m)
+n is number of elements in a
+m is number of elements in b
+
+Space complexity -> O(1)
+"""
+
+
+def sortedArray(a: [int], b: [int]) -> [int]:
+    i = 0
+    j = 0
+    result = []
+    while i < len(a) and j < len(b):
+        if a[i] <= b[j]:
+            if len(result) == 0 or result[-1] != a[i]:
+                result.append(a[i])
+            i += 1
+        else:
+            if len(result) == 0 or result[-1] != b[j]:
+                result.append(b[j])
+            j += 1
+
+    while i < len(a):
+        if len(result) == 0 or result[-1] != a[i]:
+            result.append(a[i])
+        i += 1
+
+    while j < len(b):
+        if len(result) == 0 or result[-1] != b[j]:
+            result.append(b[j])
+        j += 1
+
+    return result
+

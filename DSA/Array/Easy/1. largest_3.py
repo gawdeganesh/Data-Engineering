@@ -1,26 +1,28 @@
-#https://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/
+# https://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/
+from math import inf
 import sys
 
-def print3largest(arr,arrSize):
-    first= second=third= -sys.maxsize
 
-    if(arrSize<3):
+def print3largest(arr, arrSize):
+    first = second = third = float(-inf)
+
+    if arrSize < 3:
         return print("Size of the array is less than 3")
 
     for element in arr:
-        if (element>first):
-            third= second  # this sequence is important 
-            second=first
-            first=element
+        if element > first:
+            third = second  # this sequence is important
+            second = first
+            first = element
 
-        elif (element>second and element != first):
-            third= second
-            second=element
+        elif element > second and element != first:
+            third = second
+            second = element
 
-        elif(element>third and element != second and element != first) :
-            third=element     
+        elif element > third and element != second and element != first:
+            third = element
 
-    print("The three largest element are", first,second,third)    
+    print("The three largest element are", first, second, third)
 
 
 # Driver program to test above function
@@ -29,4 +31,3 @@ def print3largest(arr,arrSize):
 arr = [12, 13, 1, 34, 34, 1]
 n = len(arr)
 print3largest(arr, n)
-

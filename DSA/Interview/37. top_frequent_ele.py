@@ -12,6 +12,9 @@ def top_frequent(ele_list: list[int], n: int) -> dict[int, int]:
     if len(count_dict) < n:
         return -1
 
+    print(count_dict)
+
+    print (sorted(count_dict.items(), key=lambda items: items[1], reverse=True)[n][1])
     sorted_dict = dict(
         sorted(count_dict.items(), key=lambda items: items[1], reverse=True)[:n]
     )
