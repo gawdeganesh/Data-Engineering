@@ -46,27 +46,28 @@ def rotate_array_left_aux(arr: list, k: int) -> list:
     return left_part + right_part
 
 
-def rotate_array_left(arr: list, k: int) -> list:
+def rotate(self, nums: List[int], k: int) -> None:
+    """
+    Do not return anything, modify nums in-place instead.
+    """
 
-    def reverse(start, end):
+    def reverse(l, r):
+        while l < r:
+            nums[l], nums[r] = nums[r], nums[l]
+            l += 1
+            r -= 1
 
-        while start < end:
-            arr[start], arr[end] = arr[end], arr[start]
-            start += 1
-            end -= 1
+    n = len(nums)
+    k %= n  # Handle cases where k > n
 
-    n = len(arr)
+    # To rotate left by k, rotate right by n - k
+    k = n - k
 
-    if k == 0 or n == 0 or k % n == 0:
-        return -1  # no rotation required
+    reverse(0, n - 1)  # Reverse the entire array
+    reverse(0, k - 1)  # Reverse the first k elements
+    reverse(k, n - 1)  # Reverse the remaining elements
 
-    k = k % n  # normalize k
-
-    reverse(0, n - 1)  # [88888, -9, 6, 5, 34, 2, 1]
-    reverse(0, n - k - 1)  # [5, 6, -9 ,88888, 34, 2, 1]
-    reverse(n - k, n - 1)  # [5, 6, -9, 88888, 1, 2, 34]
-
-    return arr  # time complexity : O[n] and space complexity : O[1] because of in-place update
+    return nums  # time complexity : O[n] and space complexity : O[1] because of in-place update
 
 
 from typing import List
@@ -93,6 +94,6 @@ class Solution:
             nums.insert(0, last)
 
 
-print(rotate_array_left([1, 2, 34, 5, 6, -9, 88888], 3))  # [5, 6, -9, 88888, 1, 2, 34]
+print(rotate([1, 2, 34, 5, 6, -9, 88888], 3))  # [5, 6, -9, 88888, 1, 2, 34]
 # print(rotate_array_left([], 1))
-print(rotate_array_left([-1, -2, -34, -5, -6, -9, -88888], 10))
+print(rotate([-1, -2, -34, -5, -6, -9, -88888], 10))
