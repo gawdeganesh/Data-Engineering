@@ -1,4 +1,6 @@
 # https://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/
+# https://leetcode.com/problems/third-maximum-number/description/
+
 from math import inf
 import sys
 

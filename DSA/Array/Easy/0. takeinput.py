@@ -18,3 +18,5 @@ squared_numbers = [number**2 for number in numbers]
 
 # Print the list of squared numbers
 print(squared_numbers)
+
+
