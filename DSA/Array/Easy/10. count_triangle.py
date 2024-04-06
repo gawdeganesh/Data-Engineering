@@ -130,12 +130,21 @@ def CountTriangles(A):
     print("No of possible solutions: ", count)
 
 
-# Driver Code
-if __name__ == "__main__":
+def triangleNumber(nums: list[int]) -> int:
+    nums.sort()
+    count = 0
+    n = len(nums)
+    for i in range(n - 1, 1, -1):
+        left, right = 0, i - 1
+        while left < right:
+            if nums[left] + nums[right] > nums[i]:
+                count += right - left
+                right -= 1
+            else:
+                left += 1
+    return count
 
-    A = [10, 21, 22, 100, 101, 200, 300]
 
-    # Function call
-    CountTriangles(A)
+A = [10, 21, 22, 100, 101, 200, 300]
 
-# This code is contributed by PrinciRaj1992
+print(triangleNumber(A))
