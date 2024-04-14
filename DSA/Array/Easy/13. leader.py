@@ -2,15 +2,18 @@
 # https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/submissions/1224333268/
 
 
-def printLeaders(arr, n):
-
-    for i in range(1, n):
-        if arr[i] > arr[i - 1] or i == (n - 1):
-            print(arr[i], end=" ")
-        else:
-            continue
+def superiorElements(arr: list[int]) -> list[int]:
+    result = [0]* len(arr)
+    maxi = -1
+    n = len(arr)
+    for i in range(n - 1, -1, -1):
+        result[i] = maxi
+        maxi = max(maxi, arr[i])     
+        
+    return result
 
 
 # Driver function
 arr = [16, 17, 4, 3, 5, 2]
-printLeaders(arr, len(arr))
+print(superiorElements(arr))
+

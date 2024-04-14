@@ -1,25 +1,18 @@
 def longest_substring(text: list[str]) -> str:
-    if not text:
-        return "substring cannot be possible"
-    if len(text) == 1:
-        return list[0]
+    if len(text)==0: return ''
 
-    smallest_length = min(len(ele) for ele in list)
-    prefix = ""
+    text = sorted(text)
 
-    for i in range(smallest_length):
-        current_char = text[0][i]
-        match = True
+    result = ''
 
-        for ele in text:
-            if current_char != ele[i]:
-                match = False
-                return prefix
+    for ch in text[0]:
+        if text[-1].startswith(result+ch):
+            result+=ch
+        else:
+            break
+    
+    return result
 
-        prefix += current_char
-
-    if match:
-        return prefix
 
 
 list = ["flower", "flow", "flight"]

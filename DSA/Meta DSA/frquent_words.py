@@ -8,6 +8,7 @@ def top_k_frequent(words, k):
 
     # Sort by (-frequency, word) to achieve the desired ordering
     unique_words = sorted(word_counts.items(), key=lambda item: (-item[1], item[0]))
+    print(unique_words)
 
     return [word for word, _ in unique_words[:k]]
 
