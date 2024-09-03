@@ -15,8 +15,8 @@ def count_friends(friendships):
     return friend_count
 
 # Example usage
-# friendships = [[2,3],[3,4],[5]]
-# print(count_friends(friendships))
+friendships = [[2,3],[3,4],[5]]
+print(count_friends(friendships))
 
 friendships = [[2, 2, 3], [3, 4]]
 print(count_friends(friendships))

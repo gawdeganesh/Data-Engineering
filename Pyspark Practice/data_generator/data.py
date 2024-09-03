@@ -16,8 +16,7 @@ def generate_customers(n):
         "customer_id": range(1, n + 1),
         "customer_name": [fake.name() for _ in range(n)],
         "customer_phone": [fake.phone_number() for _ in range(n)],
-        "customer_email": [fake.email() for _ in range(n)],
-        "other_customer_details": [fake.text(max_nb_chars=200) for _ in range(n)]
+        "customer_email": [fake.email() for _ in range(n)]
     }
     return pd.DataFrame(customers)
 
@@ -25,8 +24,7 @@ def generate_customers(n):
 def generate_suppliers(n):
     suppliers = {
         "supplier_id": range(1, n + 1),
-        "supplier_name": [fake.company() for _ in range(n)],
-        "other_supplier_details": [fake.text(max_nb_chars=200) for _ in range(n)]
+        "supplier_name": [fake.company() for _ in range(n)]
     }
     return pd.DataFrame(suppliers)
 
@@ -37,8 +35,7 @@ def generate_products(n, suppliers_n):
         "product_id": range(1, n + 1),
         "product_type_code": [random.randint(1, 100) for _ in range(n)],
         "supplier_id": [random.randint(1, suppliers_n) for _ in range(n)],
-        "product_price": [random.uniform(0.99, 1000.0) for _ in range(n)],
-        "other_product_details": [fake.text(max_nb_chars=200) for _ in range(n)]
+        "product_price": [random.uniform(0.99, 1000.0) for _ in range(n)]
     }
     return pd.DataFrame(products)
 
@@ -52,8 +49,7 @@ def generate_addresses(n):
         "city": [fake.city() for _ in range(n)],
         "zip_postcode": [fake.zipcode() for _ in range(n)],
         "state_province_county": [fake.state() for _ in range(n)],
-        "iso_country_code": [fake.country_code() for _ in range(n)],
-        "other_address_details": [fake.text(max_nb_chars=200) for _ in range(n)]
+        "iso_country_code": [fake.country_code() for _ in range(n)]
     }
     return pd.DataFrame(addresses)
 
@@ -66,8 +62,7 @@ def generate_customer_orders(n, customers_n):
         "order_status_code": [random.randint(1, 5) for _ in range(n)],
         "date_order_placed": [fake.date_between(start_date='-2y', end_date='today') for _ in range(n)],
         "date_order_paid": [fake.date_between(start_date='-2y', end_date='today') for _ in range(n)],
-        "order_price": [random.uniform(20.0, 5000.0) for _ in range(n)],
-        "other_order_details": [fake.text(max_nb_chars=200) for _ in range(n)]
+        "order_price": [random.uniform(20.0, 5000.0) for _ in range(n)]
     }
     return pd.DataFrame(customer_orders)
 
